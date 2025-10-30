@@ -4,12 +4,14 @@ public class Person {
 	
 	private String Name;
 	private int Alter;
-	private int Beitrittsdatum;
+	private String Geburtsdatum;
+	public String Beitrittsdatum;
 	
-	public Person(String Name, int Beitrittsdatum) {
+	public Person(String Name, String Beitrittsdatum, String Geburtsdatum) {
 		this.Name = Name;
 		this.Alter = 0;
 		this.Beitrittsdatum = Beitrittsdatum;
+		this.Geburtsdatum = Geburtsdatum;
 	}
 	
 	public int getAlter() {
@@ -20,7 +22,15 @@ public class Person {
 		return Name;
 	}
 	
-	public int getBeitrittsdatum() {
+	public String getBeitrittsdatum() {
 		return Beitrittsdatum;
+	}
+	
+	public String getGeburtsdatum() {
+		return Geburtsdatum;
+	}
+	
+	public void Geburtstag() {
+		Alter += 1;
 	}
 }

@@ -5,10 +5,13 @@ public class Mitarbeiter {
 	private int Mitarbeiternummer;
 	private ArrayList<Kunde> Kunden;
 	private Person MitarbeiterPerson;
+	private ArrayList<Filiale> Filialen;
 	
-	public Mitarbeiter(int Mitarbeiternummer, Person newPerson) {
+	public Mitarbeiter(int Mitarbeiternummer, Person newPerson, String Beitrittsdatum, ArrayList<Filiale> filiale) {
 		this.Mitarbeiternummer = Mitarbeiternummer;
 		this.MitarbeiterPerson = newPerson;
+		this.MitarbeiterPerson.Beitrittsdatum = Beitrittsdatum;
+		this.Filialen = filiale;
 	}
 	
 	public ArrayList<Kunde> getKunde(){
@@ -27,7 +30,31 @@ public class Mitarbeiter {
 		Kunden.remove(newKunde);
 	}
 	
-	public int getBeitrittsdatum() {
+	public String getBeitrittsdatum() {
 		return MitarbeiterPerson.getBeitrittsdatum();
+	}
+	
+	public int getAlter() {
+		return MitarbeiterPerson.getAlter();
+	}
+	
+	public String getName() {
+		return MitarbeiterPerson.getName();
+	}
+	
+	public String getGeburtsdatum() {
+		return MitarbeiterPerson.getGeburtsdatum();
+	}
+	
+	public void KundeGeburtstag() {
+		MitarbeiterPerson.Geburtstag();
+	}
+	
+	public ArrayList<String> getFilialenamen(){
+		ArrayList<String> FilialeNamen = new ArrayList<String>();
+		for (Filiale filial : Filialen) {
+			FilialeNamen.add(filial.getFilialname());
+		}
+		return FilialeNamen;
 	}
 }
